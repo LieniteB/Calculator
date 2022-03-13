@@ -155,8 +155,8 @@ function clear() {
 
 function del() {
     currentDisplay.textContent = ""
-    previousDisplay.textContent = previousDisplay.textContent.slice(0, previousDisplay.textContent.length -2)
-    number_1 = number_1.slice(0, number_1.length -2);
-    number_2 = number_2.slice(0, number_1.length -2);
+    previousDisplay.textContent = previousDisplay.textContent.slice(0, previousDisplay.textContent.length -1)
+    number_1 = number_1.slice(0, number_1.length -1);
+    number_2 = number_2.slice(0, number_1.length -1);
 
 }
