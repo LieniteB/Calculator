@@ -1,19 +1,19 @@
 
 
 const add = function(a, b) {
-	return parseInt(a)+parseInt(b)
+	return Number(a)+Number(b)
 };
 
 const subtract = function(a, b) {
-	return parseInt(a)-parseInt(b)
+	return Number(a)-Number(b)
 };
 
 const multiply = function(a, b) {
-    return parseInt(a)*parseInt(b);
+    return Number(a)*Number(b);
 }
 
 const devide = function (a, b) {
-    return parseInt(a)/parseInt(b)
+    return Number(a)/Number(b)
 }
 
 function operate(operator, num1, num2){
@@ -114,6 +114,10 @@ devided.addEventListener("click", () => {
     operator = "/"  
 })
 
+const period = document.querySelector("#period").addEventListener("click", () => {
+    displays(".")
+});
+
 const equals = document.querySelector("#equals");
 equals.addEventListener("click", () => {
     previousDisplay.textContent += "=";
@@ -136,10 +140,23 @@ AC.addEventListener("click", () => {
     clear()
 })
 
+const DEL = document.querySelector("#DEL");
+DEL.addEventListener("click", () =>{
+    del()
+})
+
 function clear() {
     currentDisplay.textContent = "";
     previousDisplay.textContent = "";
     number_1 = [];
     number_2 = [];
     operator = "";
+}
+
+function del() {
+    currentDisplay.textContent = ""
+    previousDisplay.textContent = previousDisplay.textContent.slice(0, previousDisplay.textContent.length -2)
+    number_1 = number_1.slice(0, number_1.length -2);
+    number_2 = number_2.slice(0, number_1.length -2);
+
 }
