@@ -123,6 +123,9 @@ equals.addEventListener("click", () => {
     previousDisplay.textContent += "=";
     currentDisplay.textContent = `${operate(operator, number_1, number_2)}`
     clear()
+    if (currentDisplay.textContent == "undefined"){
+        currentDisplay.textContent = ""
+    }
 })
 
 
