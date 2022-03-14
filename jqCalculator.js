@@ -122,6 +122,7 @@ const equals = document.querySelector("#equals");
 equals.addEventListener("click", () => {
     previousDisplay.textContent += "=";
     currentDisplay.textContent = `${operate(operator, number_1, number_2)}`
+    clear()
 })
 
 
@@ -138,6 +139,7 @@ function displays(number) {
 const AC = document.querySelector("#AC");
 AC.addEventListener("click", () => {
     clear()
+    currentDisplay.textContent = "";
 })
 
 const DEL = document.querySelector("#DEL");
@@ -146,7 +148,6 @@ DEL.addEventListener("click", () =>{
 })
 
 function clear() {
-    currentDisplay.textContent = "";
     previousDisplay.textContent = "";
     number_1 = [];
     number_2 = [];
@@ -156,7 +157,10 @@ function clear() {
 function del() {
     currentDisplay.textContent = ""
     previousDisplay.textContent = previousDisplay.textContent.slice(0, previousDisplay.textContent.length -1)
-    number_1 = number_1.slice(0, number_1.length -1);
-    number_2 = number_2.slice(0, number_1.length -1);
+    if (operator == "undefined"){
+        number_1 = number_1.slice(0, number_1.length -1);
+        number_2 = number_2.slice(0, number_1.length -1);
+    }else operator = ""
+    
 
 }
